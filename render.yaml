@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: sortyx-backend
+    env: node
+    plan: free
+    buildCommand: cd backend && npm install
+    startCommand: npm start
+    rootDir: backend
+
+  - type: web
+    name: sortyx-frontend
+    env: static
+    plan: free
+    buildCommand: cd frontend && npm install && npm run build
+    staticPublishPath: frontend/dist
+    rootDir: frontend
