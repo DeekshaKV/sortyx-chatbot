@@ -11,7 +11,7 @@ const App = () => {
     setMessages((prev) => [...prev, userMsg]);
 
     try {
-      const res = await axios.post("https://sortyx-chatbot-obzx.onrender.com", { message: input });
+      const res = await axios.post("https://sortyx-chatbot-obzx.onrender.com/chat", { message: input });
       const botMsg = { sender: "bot", text: res.data.reply };
       setMessages((prev) => [...prev, botMsg]);
     } catch (err) {
